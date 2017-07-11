@@ -7,15 +7,18 @@ var b;
 
 function setup() {
     createCanvas(480, 600);
+    
+    frameRate(5);
+    
     circleDiameter = width/circle;
     circleRadius = circleDiameter/2;
-}
-
-function draw() {
+    
     r = 255;
     g = 0;
     b = 0;
-    
+}
+
+function draw() {
     var isShifted = false;
     
     var y = height;
@@ -37,9 +40,9 @@ function draw() {
         }
         y -= circleRadius;
         isShifted = !isShifted;
-        r -= 2;
-        g += 7
-        b += 3
+        r = (r + 254) % 256;
+        g = (g + 7) % 256;
+        b = (b + 3) % 256;
     }
 }
 
