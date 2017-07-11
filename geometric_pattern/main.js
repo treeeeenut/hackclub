@@ -1,6 +1,9 @@
 var circle = 12;
 var circleDiameter;
 var circleRadius;
+var r;
+var g;
+var b;
 
 function setup() {
     createCanvas(480, 600);
@@ -9,6 +12,10 @@ function setup() {
 }
 
 function draw() {
+    r = 255;
+    g = 0;
+    b = 0;
+    
     var isShifted = false;
     
     var y = height;
@@ -23,10 +30,15 @@ function draw() {
         }
         while (x <= width)
         {
+            fill(color(r,g,b))
+            stroke(color(r,g,b))
             ellipse(x, y, circleDiameter, circleDiameter)
             x += circleDiameter;
         }
         y -= circleRadius;
         isShifted = !isShifted;
+        r -= 2;
+        g += 7
+        b += 3
     }
 }
